@@ -44,5 +44,5 @@ resource "cilium" "this" {
   count      = var.cilium_install ? 1 : 0
   values     = templatefile("templates/values.yaml-tmpl", { pod_cidr = var.pod_cidr })
   version    = var.cilium_version
-  depends_on = [time_sleep.this]
+  depends_on = [time_sleep.this, module.vpc]
 }
