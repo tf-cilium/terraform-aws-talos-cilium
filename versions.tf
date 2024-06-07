@@ -9,6 +9,6 @@ terraform {
 }
 
 provider "cilium" {
-  #config_content = base64encode(module.talos.kubeconfig)
-  config_path = module.talos.path_to_kubeconfig_file
+  config_content = base64encode(module.talos.kubeconfig)
+  #config_path = module.talos.path_to_kubeconfig_file
 }

@@ -34,8 +34,15 @@ module "talos" {
   service_cidr       = var.service_cidr
 }
 
+resource "time_sleep" "this" {
+  create_duration = "30s"
+
+  depends_on = [module.talos]
+}
+
 resource "cilium" "this" {
+  count      = var.cilium_install ? 1 : 0
   values     = templatefile("templates/values.yaml-tmpl", { pod_cidr = var.pod_cidr })
   version    = var.cilium_version
-  depends_on = [module.talos]
+  depends_on = [time_sleep.this]
 }

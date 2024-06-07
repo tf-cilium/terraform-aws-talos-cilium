@@ -19,6 +19,12 @@ variable "cilium_version" {
   default = "1.15.5"
 }
 
+variable "cilium_install" {
+  description = "Install Cilium CNI ?"
+  type        = bool
+  default     = true
+}
+
 variable "pod_cidr" {
   description = "CIDR of Pods"
   type        = string
