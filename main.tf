@@ -36,6 +36,6 @@ module "talos" {
 
 resource "cilium" "this" {
   values     = templatefile("templates/values.yaml-tmpl", { pod_cidr = var.pod_cidr })
-  version    = "1.15.5"
+  version    = var.cilium_version
   depends_on = [module.talos]
 }

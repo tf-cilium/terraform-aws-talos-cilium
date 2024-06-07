@@ -14,6 +14,11 @@ variable "kubernetes_version" {
   default = "1.29.3"
 }
 
+variable "cilium_version" {
+  type    = string
+  default = "1.15.5"
+}
+
 variable "pod_cidr" {
   description = "CIDR of Pods"
   type        = string
