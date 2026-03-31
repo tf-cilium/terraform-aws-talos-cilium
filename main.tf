@@ -21,7 +21,7 @@ module "vpc" {
 }
 
 module "talos" {
-  source = "git::https://github.com/isovalent/terraform-aws-talos?ref=v0.7.1"
+  source = "git::https://github.com/isovalent/terraform-aws-talos?ref=v0.15.1"
 
   talos_version      = var.talos_version
   kubernetes_version = var.kubernetes_version
